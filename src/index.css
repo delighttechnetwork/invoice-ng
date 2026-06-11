@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom continuous rotations and micro interactions */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+/* Professional Invoice Print Styles */
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 12pt !important;
+  }
+  
+  /* Hide every single element of the app */
+  body * {
+    visibility: hidden;
+  }
+  
+  /* Make the printable invoice paper and its children visible only */
+  #printable-invoice-paper,
+  #printable-invoice-paper * {
+    visibility: visible;
+  }
+  
+  /* Position and style the paper cleanly on the printed document layout */
+  #printable-invoice-paper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 210mm; /* standard A4 width */
+    min-height: 297mm; /* standard A4 height */
+    padding: 15mm !important;
+    margin: 0 !important;
+    border: none !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+  }
+}
+

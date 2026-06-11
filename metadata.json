@@ -1,0 +1,8 @@
+{
+  "name": "InvoiceNG",
+  "description": "Full-stack Invoice Manager with local and cloud Supabase sync, Paystack payments simulator, and Gemini AI accountant coach.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
